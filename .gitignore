@@ -1,0 +1,5 @@
+node_modules
+oi.js
+.env
+src/env.js
+testes

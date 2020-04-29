@@ -1,0 +1,9 @@
+{
+    "TOKEN_TIME": 31536000,
+    "RECOVERY_PASS_TIME": 300,
+    "HASH_N": 7,
+    "COMPANY": "Insight",
+    "MAIL_HOST": "smtp.gmail.com",
+    "MAIL_PORT": 465,
+    "MAIL_SECURE": true
+}
