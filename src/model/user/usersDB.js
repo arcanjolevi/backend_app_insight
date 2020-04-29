@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const UserModel = require('./userModel');
 const crypt = require('bcryptjs');
-const env = require('../../env');
+
 
 var insertUser = async function(user) {
     
