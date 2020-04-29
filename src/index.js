@@ -54,7 +54,7 @@ app.post('/admin/add/team', adminAddTeamRoute);
 
 
 app.get('/', (req, res) => {
-    return res.send('Oie Levi');
+    return res.send(`Oie Levi<br/>DB_URL:${process.env.DB_URL}<br/>SECRET:${process.env.SECRET}<br/>MAIL_USER:${process.env.MAIL_USER}<br/>MAIL_PASSWORD:${process.env.MAIL_PASSWORD}`);
 });
 app.listen(port, () => {
     console.log(`...\n...\n\t${config.COMPANY} Server running at port ${port}\n...\n...`);
