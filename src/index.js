@@ -2,6 +2,10 @@ require('dotenv').config();
 const config = require('./config/config.json');
 
 const express = require('express');
+
+const port = process.env.PORT || 3000
+
+/*
 const bodyParser = require('body-parser');
 
 const auth = require('./routes/user/auth');
@@ -21,8 +25,9 @@ const adminAddPlanRoute = require('./routes/admin/AdminAddPlan');
 const adminAddPrayRoute = require('./routes/admin/AdminAddPray');
 const adminAddTeamRoute = require('./routes/admin/AdminAddTeam');
 const updatePersonalDetailsRoute = require('./routes/user/updatePersonalDetails');
-
+*/
 const app = express();
+/*
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -45,7 +50,12 @@ app.post('/admin/add/plan', adminAddPlanRoute);
 app.post('/admin/add/pray', adminAddPrayRoute);
 app.post('/admin/add/team', adminAddTeamRoute);
 
+*/
 
-app.listen(process.env.PORT || process.env.BC_PORT, () => {
-    console.log(`...\n...\n\t${config.COMPANY} Server running at port ${process.env.BC_PORT}\n...\n...`);
+
+app.get('/', (req, res) => {
+    return res.send('Oie Levi');
+});
+app.listen(port, () => {
+    console.log(`...\n...\n\t${config.COMPANY} Server running at port ${port}\n...\n...`);
 });
