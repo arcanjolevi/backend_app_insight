@@ -24,6 +24,8 @@ const adminAddPlanRoute = require('./routes/admin/AdminAddPlan');
 const adminAddPrayRoute = require('./routes/admin/AdminAddPray');
 const adminAddTeamRoute = require('./routes/admin/AdminAddTeam');
 const updatePersonalDetailsRoute = require('./routes/user/updatePersonalDetails');
+const updateAllUserPlans = require('./routes/user/updateAllUserPlans');
+const updateAllUserPrays = require('./routes/user/updateAllUserPrays');
 
 const app = express();
 
@@ -37,6 +39,8 @@ app.post('/update/password', updatePasswordRoute);
 
 app.get('/list/all/plans', listPlansRoute);
 app.get('/list/all/prays', listPraysRoute);
+app.post('/update/all/user/plans', auth, updateAllUserPlans);
+app.post('/update/all/user/prays', auth, updateAllUserPrays);
 app.post('/update/user/plans', auth, updateUserPlansRoute);
 app.post('/update/user/prays', auth, updateUserPraysRoute);
 app.get('/user/plans', auth, listUserPlansRoute);
