@@ -4,21 +4,21 @@ var Schema = mongoose.Schema;
 var teamSchema = new Schema({
 	name: {
 		type: String,
-        required: true,
-        unique: true
-	},
-	teamManagers: {
-		type: [String],
-		required: true
+		required: true,
+		unique: true
 	},
 	teamMembers: {
 		type: [String],
-		required: true
-    },
-    institution: {
+		deafult: []
+  },
+  institution: {
 		type: String,
 		required: true
-    },
+	},
+	description: {
+		type: String,
+		required: true
+	}
     
 }, { collection: 'teams'});
 

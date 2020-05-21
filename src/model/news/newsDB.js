@@ -1,11 +1,11 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const TeamModel = require('./teamModel');
+const newsModel = require('./newsModel');
 
-const insertTeam = async function(team) {
+const insertNews = async function(news) {
     await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
     
-    var data = new TeamModel(team);
+    var data = new newsModel(news);
     var inserted = await data.save();
     
     mongoose.disconnect();
@@ -13,11 +13,11 @@ const insertTeam = async function(team) {
     return inserted;
 };
 
-const findTeam = async function(obj) {
+const findNews = async function(obj) {
     await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
    
 
-    var exist = await TeamModel.findOne(obj);
+    var exist = await newsModel.findOne(obj);
     
     
     mongoose.disconnect();
@@ -26,31 +26,32 @@ const findTeam = async function(obj) {
 };
 
 
-const listTeams = async function() {
+const listNews = async function() {
     await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
    
-    var exist = await TeamModel.find({});   
+    var exist = await newsModel.find({});   
     
     mongoose.disconnect();
 
     return exist;
 };
 
-const updateTeam = async function(queryObj, updateObj) {
+const updateNews = async function(queryObj, updateObj) {
     await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true })
  
-    await TeamModel.updateOne(queryObj, updateObj);
+    await newsModel.updateOne(queryObj, updateObj);
     
     mongoose.disconnect();
 
 };
 
-const removeTeam = async function(obj) {
+const removeNews = async function(obj) {
     await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
       
-    await TeamModel.deleteOne(obj);   
+    await newsModel.deleteOne(obj);   
     
     mongoose.disconnect();
 };
 
-module.exports = { insertTeam, findTeam, updateTeam, listTeams, removeTeam };
+
+module.exports = {insertNews, findNews, updateNews, listNews, removeNews};

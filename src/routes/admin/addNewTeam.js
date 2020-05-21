@@ -3,7 +3,7 @@ const teamDB = require('../../model/team/teamDB');
 module.exports = async(req, res) =>{    
     
     try{
-        await teamDB.insertTeam(req.team);
+        await teamDB.insertTeam(req.body);
         const allTeams = await teamDB.listTeams();
         return res.send({ status: 'Success',  allTeams: allTeams });
     }catch(e){

@@ -41,5 +41,15 @@ var updateUser = async function(queryObj, updateObj) {
 
 };
 
+const listUsers = async function() {
+    await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
+   
+    var exist = await UserModel.find({});   
+    
+    mongoose.disconnect();
 
-module.exports = {insertUser, findUser, updateUser};
+    return exist;
+};
+
+
+module.exports = {insertUser, findUser, updateUser, listUsers};

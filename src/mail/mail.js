@@ -12,7 +12,7 @@ var transporter = nm.createTransport({
     }
 });
 
-var sendRecoveryEmail = (token, toEmail, userName) => {
+let sendRecoveryEmail = (token, toEmail, userName) => {
 
     const texto = `<!DOCTYPE html>
     <html lang='en'>
@@ -54,4 +54,62 @@ var sendRecoveryEmail = (token, toEmail, userName) => {
 };
 
 
-module.exports = {sendRecoveryEmail};
+let sendContactEmail = (tema, msg, toEmail, fromEmail, fromName, toName) => {
+
+    const toText = `\n    
+        Olá ${toName},\n
+        ${fromName} entrou em contato com você através do app Insight.
+        Segue abaixo a mensagem dessa pessoa.
+        \n\n\n
+        De:${fromEmail}
+        Tema:${tema}\n
+        Msg:${msg}`
+
+    const fromText = `\n    
+    Olá ${fromName},\n
+    Você entrou em contato com ${toName} através do app Insight.
+    Segue abaixo a sua mensagem.
+    \n\n\n
+    Para: ${toEmail}
+    Tema:${tema}\n
+    Msg:${msg}`
+
+    const toContent = {
+        from: "[APP INSIGHT] " + process.env.MAIL_USER,
+        to: toEmail,
+        subject: "Contato via app Insight",
+        text: toText,
+        html: "" 
+    }
+
+    const fromContent = {
+        from: "[APP INSIGHT] " + process.env.MAIL_USER,
+        to: fromEmail,
+        subject: "Contato via app Insight",
+        text: fromText,
+        html: "" 
+    }
+    
+    transporter.sendMail(toContent, (error, data) => {
+        if(error){
+            console.log(error);
+            console.log("Not Sent\n\n\n");
+            
+        }else{
+            console.log("Email to receiver Sent");
+        }    
+    });
+
+    transporter.sendMail(fromContent, (error, data) => {
+        if(error){
+            console.log(error);
+            console.log("Not Sent\n\n\n");
+            
+        }else{
+            console.log("Email to sender Sent");
+        }    
+    });
+};
+
+
+module.exports = {sendRecoveryEmail, sendContactEmail};

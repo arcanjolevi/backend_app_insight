@@ -22,6 +22,10 @@ module.exports = async (req, res) => {
     if(req.body.institution){
         obj.institution = req.body.institution;
     }
+
+    if(req.body.course){
+        obj.course = req.body.course
+    }
     try{
         await userDB.updateUser({ _id: req.userId }, obj);
     }catch(e){

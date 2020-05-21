@@ -37,8 +37,16 @@ var userSchema = new Schema({
 		default: []
 	},
 	team: {
-		type: [String],
-		default: []
+		type: String,
+		default: ""
+	},
+	course: {
+		type: String,
+		default: ""
+	},
+	admin: {
+		type: Boolean,
+		default: false
 	},
 	createAt: {
 		type: Date,

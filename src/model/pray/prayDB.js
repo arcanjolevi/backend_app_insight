@@ -53,5 +53,12 @@ var updatePray = async function(queryObj, updateObj) {
 
 };
 
+const removePray = async function(obj) {
+    await mongoose.connect(process.env.DB_URL, { useCreateIndex:true, useNewUrlParser: true, useUnifiedTopology: true });
+      
+    await PrayModel.deleteOne(obj);   
+    
+    mongoose.disconnect();
+};
 
-module.exports = { insertPray, updatePray, findPray, listPray };
+module.exports = { insertPray, updatePray, findPray, listPray, removePray};
