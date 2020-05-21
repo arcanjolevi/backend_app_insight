@@ -57,6 +57,7 @@ app.post('/update/personal/details', userRoutes.auth, userRoutes.updatePersonalD
 app.get('/user/plans', userRoutes.auth, userRoutes.listMyPlans);
 app.get('/user/prays', userRoutes.auth, userRoutes.listMyPrays);
 app.post('/contact', userRoutes.auth, userRoutes.contact);
+app.get('/user/data/:userID', userRoutes.userData);
 
 
 //HomePage

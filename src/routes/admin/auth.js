@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     console.log('Autenticando admin...');
     const { token } = req.params;
     
-
+    
     if (!token) 
         return res.status(400).send({ auth: false, error: 'No token provided.' });
   

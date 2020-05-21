@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
     console.log('Autenticando...');
+    console.log(req);
     var token = req.headers.token;
     
     if (!token) 
