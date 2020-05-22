@@ -9,7 +9,7 @@ const updatePersonalDetails = require('./updatePersonalDetails');
 const updateUserPlans = require('./updateUserPlans');
 const updateUserPrays = require('./updateUserPrays');
 const contact = require('./contact');
-const userData = require('./personalDetails');
+
 
 module.exports = {
   auth,
@@ -22,6 +22,5 @@ module.exports = {
   updatePersonalDetails,
   updateUserPlans,
   updateUserPrays ,
-  contact,
-  userData
+  contact
 }

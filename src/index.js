@@ -28,6 +28,7 @@ app.get('/list/all/teams', everyoneRoutes.listTeams);
 app.get('/list/all/users', everyoneRoutes.listAllUsers);
 app.get('/list/all/news', everyoneRoutes.listNews);
 app.get('/list/all/teams/data', everyoneRoutes.allTeamsData);
+app.get('/user/data/:userID', everyoneRoutes.userData);
 
 
 //adminRoutes
@@ -57,7 +58,7 @@ app.post('/update/personal/details', userRoutes.auth, userRoutes.updatePersonalD
 app.get('/user/plans', userRoutes.auth, userRoutes.listMyPlans);
 app.get('/user/prays', userRoutes.auth, userRoutes.listMyPrays);
 app.post('/contact', userRoutes.auth, userRoutes.contact);
-app.get('/user/data/:userID', userRoutes.userData);
+
 
 
 //HomePage

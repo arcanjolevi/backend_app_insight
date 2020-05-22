@@ -4,6 +4,7 @@ const listPlans = require('./listPlans');
 const listPrays = require('./listPrays');
 const listTeams = require('./listTeams');
 const allTeamsData = require('./allTeamsAndUsersList');
+const userData = require('./personalDetails');
 
 module.exports = {
   listAllUsers,
@@ -11,5 +12,6 @@ module.exports = {
   listPlans,
   listPrays,
   listTeams,
-  allTeamsData
+  allTeamsData,
+  userData
 }
