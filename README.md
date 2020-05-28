@@ -1,12 +1,15 @@
 <h1 align="center">
-    <img alt="Insight" title="logo" src="https://github.com/arcanjolevi/mobile_app_insight/blob/master/assets/logoPrincipal.png" width="300px" />
+    <img alt="Insight" title="logo" src="https://github.com/arcanjolevi/mobile_app_insight/blob/master/assets/logoPrincipal.png" width="200px" />
 </h1>
 
 <h4 align="center">
-  Backend app Insight
+  App Insight - Backend
 </h4>
 
 <p align="center">
+<a href="https://github.com/arcanjolevi/appInsight">Master Project</a> | 
+<a href="https://github.com/arcanjolevi/mobile_app_insight">Mobile</a>
+</p>
  
 <br>
 
